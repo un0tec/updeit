@@ -3,13 +3,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 ## README Content
-1. :notebook_with_decorative_cover: [Description](#description)
-2. :warning: [Before running](#before-running)
-3. :writing_hand: [Syntax](#syntax)
-4. :bookmark_tabs: [Options](#options)
-5. :monocle_face: [Preview](#options)
-6. :page_with_curl: [License](#options)
-7. :heart: [Contribution](#options)
+1. :notebook_with_decorative_cover: [Description](#-description)
+2. :warning: [Before running](#-before-running)
+3. :writing_hand: [Syntax](#-syntax)
+4. :bookmark_tabs: [Options](#-options)
+5. :monocle_face: [Preview](#-preview)
+6. :page_with_curl: [License](#-license)
+7. :heart: [Contribution](#-contribution)
 
 ## # Description
 
