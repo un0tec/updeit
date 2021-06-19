@@ -17,7 +17,7 @@
 
 Bash script to update Debian-based | Ubuntu | Linux | Raspberry systems.
 
-## # Before running
+## # Installation
 
 Download and place the script in the desired path. Then assign execute permissions to the script with the following command:
 
@@ -37,15 +37,15 @@ Run the following command to start the update:
 
 You can see default values in [options](#-options) section
 
-_Its recommended to run the command with sudo_
+_Its recommended to run the command with_ `sudo`
 
 ## # Options
 
 You can use the following options:
 
-    -rpi            update raspberry system. Note that user interaction may be required using this option (default: false)
+    -rpi            update raspberry system. Note that user interaction may be required using this option
 
-    -v|--verbose    verbose mode (default: false)
+    -v|--verbose    verbose mode
 
     -h|--help       show help page
 
@@ -59,8 +59,16 @@ Here you can see an example of script execution:
 
 ## # License
 
-MIT
+Distributed under the MIT License. See `LICENSE` for more information.
 
-## # Contribution
+## # Contributing
 
-:star: Feel free to contribute! :star:
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a pull request
+
+:star: Feel free to contribute :star:
