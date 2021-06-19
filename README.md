@@ -1,6 +1,8 @@
 # updeit
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/github/license/un0tec/updeit?color=orange)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/un0tec/updeit?color=green&label=Release)](https://img.shields.io/github/v/release/un0tec/updeit?color=1&label=release)
+
 
 ## README Content
 1. :notebook_with_decorative_cover: [Description](#-description)
