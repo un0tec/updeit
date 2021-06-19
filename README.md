@@ -35,7 +35,7 @@ Run the following command to start the update:
 
      sudo ./updeit
 
-You can see default values in [options](#options) section
+You can see default values in [options](#-options) section
 
 _Its recommended to run the command with sudo_
 
