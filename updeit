@@ -1,0 +1,150 @@
+#!/bin/bash
+
+# Script properties
+version="1.0"
+command=$(basename "$0")
+
+# Properties
+no_args="true"
+help="false"
+verbose="false"
+rpi="false"
+
+# Colours
+defaultColour="\e[39m"
+blackColour="\e[30m"
+redColour="\e[31m"
+greenColour="\e[32m"
+yellowColour="\e[33m"
+blueColour="\e[34m"
+magentaColour="\e[35m"
+cyanColour="\e[36m"
+grayLightColour="\e[37m"
+grayDarkColour="\e[90m"
+redLightColour="\e[91m"
+greenLightColour="\e[92m"
+yellowLightColour="\e[93m"
+blueLightColour="\e[94m"
+magentaLightColour="\e[95m"
+cyanLightColour="\e[96m"
+whiteColour="\e[97m"
+
+# Beginning of line
+beginLine="${magentaLightColour}[+]${defaultColour}"
+
+help()
+{
+	echo -e "${whiteColour}DESCRIPTION${defaultColour}"
+   	echo -e "   Update system software"
+	echo -e "   See https://github.com/un0tec/$command for more info"
+	echo -e "${whiteColour}USAGE${defaultColour}"
+	echo -e "   $command [OPTIONS]"
+	echo -e "${whiteColour}OPTIONS${defaultColour}"
+	printf "   %-20s %s\n" "-rpi" "update raspberry system"
+	printf "   %-20s %s" " " "WARNING!! - User interaction may be required"
+	echo
+	printf "   %-20s %s" "-v,--verbose" "verbose mode"
+	echo
+	printf "   %-20s %s" "-h,--help" "print this help"
+	echo
+	printf "   %-20s %s" "--version" "print script version and exit"
+	echo
+}
+
+clean() {
+	echo -e "${beginLine}${cyanLightColour} Cleaning apt${defaultColour}"
+   	apt-get clean -y
+	apt-get autoremove -y
+	apt-get clean -y
+	echo -e "${beginLine}${cyanLightColour} Cleaning finished${defaultColour}"
+}
+
+dots() {
+	echo -e "${yellowColour}...${defaultColour}"
+}
+
+start() {
+	echo -e "${beginLine}${cyanLightColour} Starting process${defaultColour}"
+	echo -e "${beginLine}${cyanLightColour} Running ${redLightColour}apt update -y ${cyanLightColour}command${defaultColour}"
+
+	if [[ "$verbose" == "true" ]]; then
+		dots
+		apt-get update -y
+		dots
+	else
+		apt-get update -y > /dev/null 2>&1
+	fi
+
+	echo -e "${beginLine}${cyanLightColour} --- Command ${redLightColour}apt update -y ${cyanLightColour}finished${defaultColour}"
+	echo -e "${beginLine}${cyanLightColour} Running ${redLightColour}apt upgrade -y ${cyanLightColour}command${defaultColour}"
+
+	if [[ "$verbose" == "true" ]]; then
+		dots
+		apt-get upgrade -y
+		dots
+	else
+		apt-get upgrade -y > /dev/null 2>&1
+	fi
+
+	echo -e "${beginLine}${cyanLightColour} --- Command ${redLightColour}apt upgrade -y ${cyanLightColour}finished${defaultColour}"
+	echo -e "${beginLine}${cyanLightColour} Running ${redLightColour}apt dist-upgrade -y ${cyanLightColour}command${defaultColour}"
+
+	if [[ "$verbose" == "true" ]]; then
+		dots
+		apt-get dist-upgrade -y
+		dots
+	else
+		apt-get dist-upgrade -y > /dev/null 2>&1
+	fi
+
+	echo -e "${beginLine}${cyanLightColour} --- Command ${redLightColour}apt dist-upgrade -y ${cyanLightColour}finished${defaultColour}"
+
+	if [[ "$rpi" == "true" ]]; then
+		echo -e "${beginLine}${cyanLightColour} Running ${redLightColour}rpi-update ${cyanLightColour}command${defaultColour}"
+		if [[ "$verbose" == "true" ]]; then
+			dots
+			rpi-update
+			dots
+		else
+			rpi-update > /dev/null 2>&1
+		fi
+		echo -e "${beginLine}${cyanLightColour} --- Command ${redLightColour}rpi-update ${cyanLightColour}finished${defaultColour}"
+	fi
+
+}
+
+# Main
+while test -n "$1"; do
+	no_args="false"
+    case "$1" in
+	-h|--help)
+		help="true"
+		;;
+	-v|--verbose)
+		verbose="true"
+		;;
+	--version)
+		echo -e "Version: $version"
+		exit 0
+		;;
+	-rpi)
+		rpi="true"
+		;;
+	*)
+		echo -e "${beginLine}${redColour} ERROR ${whiteColour} Invalid argument: '$1' not found"
+		echo -e "${beginLine}${redColour} ERROR ${whiteColour} Try '$command -h' or '$command --help' for more information."
+		exit 1
+	esac
+	shift
+done
+
+if [[ "$no_args" == "true" ]]; then
+	echo -e "${beginLine}${yellowLightColour} WARNING ${whiteColour}Options not found${defaultColour}"
+fi
+
+if [[ "$help" == "true" ]]; then
+	help
+	exit 0
+fi
+
+start
