@@ -1,7 +1,7 @@
 # updeit
 
 [![License: MIT](https://img.shields.io/github/license/un0tec/updeit?color=orange)](LICENSE)
-[![Release](https://img.shields.io/github/v/release/un0tec/updeit?color=green&label=Release)](https://img.shields.io/github/v/release/un0tec/updeit?color=1&label=release)
+[![Release](https://img.shields.io/github/v/release/un0tec/updeit?color=green&label=Release)](https://github.com/un0tec/updeit/releases/latest)
 
 
 ## README Content
