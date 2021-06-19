@@ -22,19 +22,27 @@ Run the following command to start the update:
 
      sudo ./updeit
 
-_It is recommended to run the command with sudo_
+You can see default values in [options](#options) section
+
+_Its recommended to run the command with sudo_
 
 ## # Options
 
 You can use the following options:
 
-    -rpi            update raspberry system. _Note that user interaction may be required using this option_
+    -rpi            update raspberry system. Note that user interaction may be required using this option (default: false)
 
-    -v|--verbose    verbose mode
+    -v|--verbose    verbose mode (default: false)
 
     -h|--help       show help page
 
     --version       print script version and exit
+
+## # Preview
+
+Here you can see an example of script execution:
+
+![Preview](images/run_output.png)
 
 ## # License
 
