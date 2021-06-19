@@ -10,6 +10,8 @@ Download and place the script in the desired path. Then assign execute permissio
 
     sudo chmod +x ./updeit
 
+If you want to  run the script from anywhere on the system, place the file in `/usr/local/bin` directory or add the folder where it is to the `$PATH` system variable.
+
 ## # Syntax
 
     updeit [OPTIONS]
