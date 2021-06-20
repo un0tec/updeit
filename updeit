@@ -113,6 +113,10 @@ start() {
 
 }
 
+finish() {
+	echo -e "${beginLine}${cyanLightColour} Finished! ${defaultColour}"
+}
+
 # Main
 while test -n "$1"; do
 	no_args="false"
@@ -148,3 +152,4 @@ if [[ "$help" == "true" ]]; then
 fi
 
 start
+finish
