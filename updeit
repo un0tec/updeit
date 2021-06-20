@@ -53,9 +53,17 @@ help()
 
 clean() {
 	echo -e "${beginLine}${cyanLightColour} Cleaning apt${defaultColour}"
-   	apt-get clean -y
-	apt-get autoremove -y
-	apt-get clean -y
+
+	if [[ "$verbose" == "true" ]]; then
+		apt-get clean -y
+		apt-get autoremove -y
+		apt-get clean -y
+	else
+		apt-get clean -y > /dev/null 2>&1
+		apt-get autoremove -y > /dev/null 2>&1
+		apt-get clean -y > /dev/null 2>&1
+	fi
+   	
 	echo -e "${beginLine}${cyanLightColour} Cleaning finished${defaultColour}"
 }
 
@@ -152,4 +160,5 @@ if [[ "$help" == "true" ]]; then
 fi
 
 start
+clean
 finish
