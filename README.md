@@ -17,7 +17,7 @@
 
 Bash script to update Debian-based | Ubuntu | Linux | Raspberry systems.
 
-## # Installation
+## # Before Running
 
 Download and place the script in the desired path. Then assign execute permissions to the script with the following command:
 
