@@ -8,7 +8,7 @@
 1. :notebook_with_decorative_cover: [Description](#-description)
 2. :warning: [Before running](#-before-running)
 3. :writing_hand: [Syntax](#-syntax)
-4. ::hammer:: [Usage](#-usage)
+4. :hammer: [Usage](#-usage)
 5. :bookmark_tabs: [Options](#-options)
 6. :monocle_face: [Preview](#-preview)
 7. :page_with_curl: [License](#-license)
